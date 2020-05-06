@@ -21,12 +21,15 @@ class Circle:
 
 
 while True:
-    shape = input("Area Calculator. Is your shape a rectangle or a circle? ")
-    if shape == "rectangle":
-        length1 = int(input("What is the width? "))
-        length2 = int(input("What is the second height? "))
+    shape = input("Area Calculator. Is your shape a rectangle, circle, or triangle? ")
+    if shape == "rectangle" or "triangle":
+        length1 = int(input("What is the width/base? "))
+        length2 = int(input("What is the height? "))
         my_shape = Rectangle(length1, length2)
-        print(my_shape.area())
+        if shape == "rectangle":
+            print(my_shape.area())
+        elif shape == "triangle":
+            print(my_shape.area()/2)
         break
     elif shape == "circle":
         radius = int(input("What is the radius? "))
